@@ -77,22 +77,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  *
  * ,---------------------------------------------------------.          ,---------------------------------------------------------.
- * |    `    |   1   |   2   |   3   |   4   |   5   | VolDn |          | VolUp |   6   |   7   |   8   |   9   |   0   |   -     |
+ * |    `    |   1   |   2   |   3   |   4   |   5   | VolDn |          | VolUp |   6   |   7   |   8   |   9   |   0   |   <=    |
  * |---------+-------+-------+-------+-------+-------+-------|          |-------+-------+-------+-------+-------+-------+---------|
- * |  Del    |   Q   |   W   |   E   |   R   |   T   |   {   |          |   }   |   Y   |   U   |   I   |   O   |   P   |   \     |
+ * |  Del    |   Q   |   W   |   E   |   R   |   T   |   {   |          |   }   |   Y   |   U   |   I   |   O   |   P   |    +    |
  * |---------+-------+-------+-------+-------+-------|       |          |       |-------+-------+-------+-------+-------+---------|
- * |BkSp/Ctrl|   A   |   S   |   D   | F/ L1 | G/ L2 |-------|          |-------| H/ L2 | J/ L1 |   K   |   L   |   :   | '/Ctrl  |
+ * | <=/Ctrl |   A   |   S   |   D   | F/ L1 | G/ L2 |-------|          |-------| H/ L2 | J/ L1 |   K   |   L   |   :   | =/Ctrl  |
  * |---------+-------+-------+-------+-------+-------|   [   |          |   ]   |-------+-------+-------+-------+-------+---------|
  * |  AltGr  |   Z   |   X   |   C   | V/Win |   B   |       |          |       |   N   | M/Win |   ,   |   .   |   /   |  AltGr  |
  * `---------+-------+-------+-------+-------+---------------'          `---------------+-------+-------+-------+-------+---------'
- *   | Home  | PgUp  |  L3   |  L2   |  L1   |                                          |   [   |   ]   |  L3   |PgDown |  End  |
+ *   | Home  | PgUp  |  L3   |  L2   |  L1   |                                          |   [   |   ]   |MdaPlay|PgDown |  End  |
  *   `---------------------------------------'                                          `---------------------------------------'
  *                                           ,---------------.          ,---------------.
  *                                           | Left  | Right |          | Down  |  Up   |
  *                                   ,-------|-------|-------|          |-------+-------+-------.
- *                                   |  Tab  | Caps  | Home  |          |SysReq | Enter | Space |
+ *                                   |  Tab  | Caps  | Mute  |          |SysReq | Enter | Space |
  *                                   |   /   |   /   |-------|          |-------|   /   |   /   |
- *                                   | Shift |  Alt  | Enter |          |  ESC  |  Alt  | Shift |
+ *                                   | Shift |  Alt  |  ESC  |          |  ESC  |  Alt  | Shift |
  *                                   `-----------------------'          `-----------------------'
  */
   [BASE] = LAYOUT_ergodox(
@@ -104,14 +104,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_HOME,          KC_PGUP, TT(3), TT(2), TT(1),
                                                                       KC_LEFT, KC_RIGHT,
                                                                                KC_AUDIO_MUTE,
-                                           LSFT_T(KC_TAB), ALT_T(KC_CAPSLOCK), KC_ENTER,
+                                           LSFT_T(KC_TAB), ALT_T(KC_CAPSLOCK), KC_ESCAPE,
 
                                                                                                  // RIGHT HAND ---------------------------------------------------------------------------------------------------------------
-                                                                                                                      KC_AUDIO_VOL_UP, KC_6,       KC_7,         KC_8,        KC_9,   KC_0,      KC_BSPACE,
-                                                                                                                      KC_RCBR,         KC_Y,       KC_U,         KC_I,        KC_O,   KC_P,      KC_EQUAL,
-                                                                                                                                       LT(2,KC_H), LT(1,KC_J),   KC_K,        KC_L,   KC_COLN,   CTL_T(KC_QUOTE),
-                                                                                                                      KC_RBRACKET,     KC_N,       RGUI_T(KC_M), KC_COMMA,    KC_DOT, KC_SLASH,  KC_RALT,
-                                                                                                                                                   KC_LBRACKET,  KC_RBRACKET, TT(3),  KC_PGDOWN, KC_END,
+                                                                                                                      KC_AUDIO_VOL_UP, KC_6,       KC_7,         KC_8,        KC_9,                KC_0,      KC_BSPACE,
+                                                                                                                      KC_RCBR,         KC_Y,       KC_U,         KC_I,        KC_O,                KC_P,      KC_PLUS,
+                                                                                                                                       LT(2,KC_H), LT(1,KC_J),   KC_K,        KC_L,                KC_COLN,   CTL_T(KC_EQUAL),
+                                                                                                                      KC_RBRACKET,     KC_N,       RGUI_T(KC_M), KC_COMMA,    KC_DOT,              KC_SLASH,  KC_RALT,
+                                                                                                                                                   KC_LBRACKET,  KC_RBRACKET, KC_MEDIA_PLAY_PAUSE, KC_PGDOWN, KC_END,
                                                                                                   KC_DOWN,    KC_UP,
                                                                                                   KC_PSCREEN,
                                                                                                   KC_ESCAPE,  ALT_T(KC_ENTER), RSFT_T(KC_SPACE)),
@@ -149,11 +149,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                       KC_TRANSPARENT, KC_TRANSPARENT, TO(0),
 
                                                                                                  // RIGHT HAND -------------------------------------------------------------------------------------------------
-                                                                                                                      KC_TRANSPARENT, KC_TRANSPARENT, KC_COMMA,       KC_0,           KC_KP_DOT,      KC_TRANSPARENT, KC_TRANSPARENT,
-                                                                                                                      KC_TRANSPARENT, KC_TRANSPARENT, KC_7,           KC_8,           KC_9,           KC_TRANSPARENT, KC_TRANSPARENT,
-                                                                                                                                      KC_TRANSPARENT, KC_4,           KC_5,           KC_6,           KC_TRANSPARENT, KC_TRANSPARENT,
-                                                                                                                      KC_TRANSPARENT, KC_TRANSPARENT, KC_1,           KC_2,           KC_3,           KC_TRANSPARENT, KC_TRANSPARENT,
-                                                                                                                                                      KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
+                                                                                                                      KC_TRANSPARENT, KC_TRANSPARENT, KC_COMMA, KC_0, KC_KP_DOT, KC_TRANSPARENT, KC_TRANSPARENT,
+                                                                                                                      KC_TRANSPARENT, KC_TRANSPARENT, KC_7,     KC_8, KC_9,      KC_TRANSPARENT, KC_TRANSPARENT,
+                                                                                                                                      KC_TRANSPARENT, KC_4,     KC_5, KC_6,      KC_TRANSPARENT, KC_TRANSPARENT,
+                                                                                                                      KC_TRANSPARENT, KC_TRANSPARENT, KC_1,     KC_2, KC_3,      KC_TRANSPARENT, KC_TRANSPARENT,
+                                                                                                                                                      KC_COMMA, KC_0, KC_KP_DOT, KC_TRANSPARENT, KC_TRANSPARENT,
                                                                                                   KC_TRANSPARENT, KC_TRANSPARENT,
                                                                                                   KC_TRANSPARENT,
                                                                                                   KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT),

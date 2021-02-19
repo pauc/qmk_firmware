@@ -84,7 +84,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |---------+-------+-------+-------+-------+-------|CtrlAlt|          | HYPER |-------+-------+-------+-------+-------+---------|
  * |  LAlt   |   Z   |   X   |   C   | V/LCA |   B   |  Cmd  |          |       |   N   | M/LCA |   ,   |   .   |   /   |  Ralt   |
  * `---------+-------+-------+-------+-------+---------------'          `---------------+-------+-------+-------+-------+---------'
- *   | Home  | PgUp  |  L3   |  L2   |  L1   |                                          |   [   |   ]   |MdaPlay|PgDown |  End  |
+ *   | Home  | PgUp  |  L1   |  L2   |  L3   |                                          |   [   |   ]   |MdaPlay|PgDown |  End  |
  *   `---------------------------------------'                                          `---------------------------------------'
  *                                           ,---------------.          ,---------------.
  *                                           | Left  | Right |          | Down  |  Up   |
@@ -100,7 +100,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_DELETE,        KC_Q,    KC_W,  KC_E,  KC_R,        KC_T,       KC_MEH,
       CTL_T(KC_BSPACE), KC_A,    KC_S,  KC_D,  LT(2,KC_F),  LT(3,KC_G),
       KC_RALT,          KC_Z,    KC_X,  KC_C,  LCA_T(KC_V), KC_B,       LCA(KC_LCMD),
-      KC_HOME,          KC_PGUP, TG(4), TG(3), TG(2),
+      KC_HOME,          KC_PGUP, TT(2), TT(3), TT(4),
                                                                       KC_LEFT, KC_RIGHT,
                                                                                KC_AUDIO_MUTE,
                                                LSFT_T(KC_TAB), LCMD_T(KC_ESC), KC_CAPS,
@@ -142,7 +142,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_DELETE,        KC_Q,    KC_W,  KC_E,  KC_R,        KC_T, KC_LCBR,
       CTL_T(KC_BSPACE), KC_A,    KC_S,  KC_D,  LT(2,KC_F),  LT(3,KC_G),
       KC_RALT,          KC_Z,    KC_X,  KC_C,  GUI_T(KC_V), KC_B, KC_LBRACKET,
-      KC_HOME,          KC_PGUP, TG(4), TG(3), TG(2),
+      KC_HOME,          KC_PGUP, TT(2), TT(3), TT(4),
                                                                       KC_LEFT, KC_RIGHT,
                                                                                KC_AUDIO_MUTE,
                                            LSFT_T(KC_TAB), ALT_T(KC_CAPSLOCK), KC_ESCAPE,
